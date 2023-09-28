@@ -40,11 +40,11 @@
                 }
             }
                        
-            const userId = "pmeHTngguhPGnNn9NcsVZL59U902";
-            const userRef = database.ref(userId);
+            const userId2 = "pmeHTngguhPGnNn9NcsVZL59U902";
+            const userRef2 = database.ref(userId2);
 
-            userRef.on("value", (snapshot) => {
-                const userInfo = snapshot.val();
+            userRef2.on("value", (snapshot) => {
+                const userInfo2 = snapshot.val();
                 const userDisplay = document.getElementById(`user-info-${userId}`);
                 userDisplay.innerHTML = `
                 <p>Name: ${userInfo.name}</p>

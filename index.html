@@ -45,8 +45,10 @@
             userRef.on("value", (snapshot) => {
                 const userInfo = snapshot.val();
                 const userDisplay = document.getElementById(`user-info-${userId}`);
-                userDisplay.innerHTML =  ` <p>Name: ${userInfo.name}</p> <img src="${userInfo.image}" alt="Image of User"> `;
-                }
+                userDisplay.innerHTML = `
+                <p>Name: ${userInfo.name}</p>
+                <img src="${userInfo.image}" alt="User Image">
+                `;
             }
         </script>
     </head>

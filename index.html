@@ -7,6 +7,7 @@
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+            import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
         
@@ -32,12 +33,19 @@
             const userId = "5cBlMxq5A0OZ2uVVrnZf5tehgH02";
             const userRef = database.ref(userId);
 
+            const user1Text = document.getElementById('user1')
+        
+            get(userRef).then((snapshot) => {
+                const userData = snapshot.val();
+                user1Text.innerHTML = userData.name;
+            }
             
         </script>
     </head>
     <body>
         <img src="assignment3logo.png" alt="a garbage logo" style="position: absolute; top: 0; left: 0; width: 750; height:300; z-index: 1;">
         <iframe src="https://thunkable.site/w/-NBeoP0kVoExw70DwUCfe" title="CSC305 Profile App" height = 1000 width = 500></iframe>
+        <h1 id='user1'></h1>
     </body>
 </html>
 

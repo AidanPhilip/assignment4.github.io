@@ -4,6 +4,7 @@
         <title>Assignment 4</title>
         <h1>Aidangram Website</h1>
         <meta charset="utf-8">
+        
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
@@ -26,27 +27,31 @@
             };    
       
             // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-
-            const database = firebase.database();
-
-            const userId = "5cBlMxq5A0OZ2uVVrnZf5tehgH02";
-            const userRef = database.ref(userId);
-
-            const user1Text = document.getElementById('user1')
-        
-            get(userRef).then((snapshot) => {
-                const userData = snapshot.val();
-                user1Text.innerHTML = userData.name;
-            }
+            const database = getDatabase();
+            
+            const userId1 = "5cBlMxq5A0OZ2uVVrnZf5tehgH02";
             
         </script>
+        
     </head>
     <body>
-        <img src="assignment3logo.png" alt="a garbage logo" style="position: absolute; top: 0; left: 0; width: 750; height:300; z-index: 1;">
-        <iframe src="https://thunkable.site/w/-NBeoP0kVoExw70DwUCfe" title="CSC305 Profile App" height = 1000 width = 500></iframe>
-        <h1 id='user1'></h1>
+        <div><img src="assignment3logo.png" alt="a garbage logo" style="position: absolute; top: 0; left: 0; width: 750; height:300; z-index: 1;"></div>
+        <div>
+            <div>
+                <h1 id='user1Name'>
+                    Test Name
+                </h1>
+                <h2> Picture of User: </h2>
+                <img src="assignment3logo.png" alt="a garbage logo" style="position: absolute; top: 0; left: 0; width: 50; height:50; z-index: 1;">
+            </div>
+            <div>
+                <h1 id='user1Name'>
+                    Test Name
+                </h1>
+                <h2> Picture of User: </h2>
+                <img src="assignment3logo.png" alt="a garbage logo" style="position: absolute; top: 0; left: 0; width: 50; height:50; z-index: 1;">
+            </div>
+        </div>
     </body>
 </html>
 
